@@ -8,13 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var myLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label()
+        button()
     }
-
-
 }
 
 
@@ -25,7 +26,6 @@ extension ViewController {
         let width = view.frame.size.width
         let height = view.frame.size.height
         
-        let myLabel = UILabel()
         myLabel.text = "Hello World!"
         myLabel.textAlignment = .center
         myLabel.frame = CGRect(
@@ -34,5 +34,29 @@ extension ViewController {
             width: width * 0.8,
             height: 50)
         view.addSubview(myLabel)
+    }
+    
+    func button() {
+        
+        let width = view.frame.size.width
+        let height = view.frame.size.height
+        
+        let myButton = UIButton()
+        myButton.setTitle("My Button", for: UIControl.State.normal)
+        myButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        myButton.frame = CGRect(
+            x: width * 0.5 - 155,
+            y: height * 0.5 + 570 / 2,
+            width: width * 0.8,
+            height: 50)
+        view.addSubview(myButton)
+        
+        myButton.addTarget(self, action: #selector(myAction), for: UIControl.Event.touchUpInside)
+    }
+    
+    
+    @objc func myAction() {
+        print("Button Tapped")
+        myLabel.text = "Button Tapped"
     }
 }
