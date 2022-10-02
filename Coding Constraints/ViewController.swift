@@ -11,9 +11,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        label()
     }
 
 
 }
 
+
+extension ViewController {
+    
+    func label() {
+        
+        let width = view.frame.size.width
+        let height = view.frame.size.height
+        
+        let myLabel = UILabel()
+        myLabel.text = "Hello World!"
+        myLabel.textAlignment = .center
+        myLabel.frame = CGRect(x: width * 0.10, y: height * 0.5, width: width * 0.5, height: 100)
+        view.addSubview(myLabel)
+    }
+}
