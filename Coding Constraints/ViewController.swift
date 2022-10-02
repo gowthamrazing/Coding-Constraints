@@ -28,7 +28,11 @@ extension ViewController {
         let myLabel = UILabel()
         myLabel.text = "Hello World!"
         myLabel.textAlignment = .center
-        myLabel.frame = CGRect(x: width * 0.10, y: height * 0.5, width: width * 0.5, height: 100)
+        myLabel.frame = CGRect(
+            x: width * 0.5 - width * 0.8 / 2,
+            y: height * 0.5 - 50 / 2,
+            width: width * 0.8,
+            height: 50)
         view.addSubview(myLabel)
     }
 }
